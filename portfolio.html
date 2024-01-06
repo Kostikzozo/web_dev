@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Portfolio</title>
+  <style>
+   body {
+    font: 11pt Arial, Helvetica, sans-serif; /* Рубленый шрифт текста */
+    margin: 0; /* Отступы на странице */
+   }
+   h1 {
+    font-size: 36px; /* Размер шрифта */
+    margin: 0; /* Убираем отступы */
+    color: #fc6; /* Цвет текста */
+   }
+   h2 {
+    margin-top: 0; /* Убираем отступ сверху */
+   }
+   #header { /* Верхний блок */
+    background: #c77878; /* Цвет фона */
+    padding: 10px; /* Поля вокруг текста */
+    text-align: center;
+   }
+   #sidebar-l { /* Левая колонка */
+    float: left; /* Обтекание справа */
+    border: 1px solid #333; /* Параметры рамки вокруг */
+    width: 20%; /* Ширина колонки */
+    padding: 5px; /* Поля вокруг текста */
+    margin: 10px 10px 20px 5px; /* Значения отступов */
+   }
+   #content { /* Правая колонка */
+    margin: 10px 5px 20px 25%; /* Значения отступов */
+    padding: 5px; /* Поля вокруг текста */
+    border: 1px solid #333; /* Параметры рамки */
+    overflow:hidden;
+   }
+   #footer { /* Нижний блок */
+    background: #333; /* Цвет фона */
+    padding: 5px; /* Поля вокруг текста */
+    color: #fff; /* Цвет текста */
+    clear: left; /* Отменяем действие float */
+   }
+   #body-picture {
+    float:left;
+    height: 25%;
+    width: 25%;
+    margin-right: 10px;
+
+   }
+   .pointer {
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    // Get the elements you want to make more user-friendly
+    const contentDiv = document.getElementById('content');
+    const sidebarLinks = document.querySelectorAll('#sidebar-l a');
+    const picture = document.getElementById('body-picture');
+
+    // Add event listeners for hover effects and cursor changes
+    contentDiv.addEventListener('mouseover', () => {
+      // Change cursor style when hovering over the content area
+      contentDiv.style.cursor = 'pointer';
+    });
+
+    contentDiv.addEventListener('mouseout', () => {
+      // Reset cursor style when mouse leaves the content area
+      contentDiv.style.cursor = 'default';
+    });
+
+    picture.addEventListener('mouseover', () => {
+      // Change cursor style when hovering over the picture
+      picture.style.cursor = 'zoom-in';
+    });
+
+    picture.addEventListener('mouseout', () => {
+      // Reset cursor style when mouse leaves the picture
+      picture.style.cursor = 'default';
+    });
+
+    // Add pointer cursor to sidebar links on hover
+    sidebarLinks.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.classList.add('pointer');
+      });
+
+      link.addEventListener('mouseout', () => {
+        link.classList.remove('pointer');
+      });
+    });
+  </script>
+ </head>
+ <body>
+  <div id="header"><h1>Fedorov Konstantin</h1></div>
+  <div id="sidebar-l">
+    <p class="pointer"><a href="portfoli_education.html">Education</a></p>
+    <p class="pointer"><a href="portfolio_work_experience.html">Work experince</a></p>
+    <p class="pointer"><a href="portfolio_contacts.html">My contacts</a></p>
+
+    
+  </div>
+  <div id="content">
+    <h2>About me </h2>
+    <img id="body-picture" src="portfolio pic.jpg">
+    <p style="text-align: center; "> I was born in Saint Petersburg in 2005. Graduated from high school in 2023. Started studying in Tampere Univirsuty of applid Sciences in 2023 on Software engineering programm. My hobbies are going to gym and play football.</p>
+    
+  </div>
+  <div id="footer">&copy; Kosta Fedorov</div>
+ </body>
+</html>
